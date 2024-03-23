@@ -1,0 +1,18 @@
+* VersaLogic VersaAPI Sample Code - 20210819
+*
+* This code is given with no guarantees and is intended to be used as an 
+* example of how to use the VersaAPI software package and to check the 
+* operation post install. This code will work with various VersaLogic 
+* single board computers, the VersaLogic VL-MPEe-A1/A2 and VL-MPEe-U2
+* miniPCIe boards.
+*
+* Default Program Description: 
+* versaAPI_sample
+*      - Example of using the VersaAPI Administration, Digital I/O, 8254 Counter/Timer
+*        and BIOS bank calls.
+* 
+* This code has been compiled using Microsoft Visual Studio Professional 2017 
+* Version 15.x.x and 2019 Version 16.x.x and run on various Windows 10 distributions.
+* A Visual Studio Solutions file has been included for reference only.
+*
+

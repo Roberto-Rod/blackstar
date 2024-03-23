@@ -1,0 +1,113 @@
+* VersaLogic VersaAPI Sample Code
+* 20210107 - Initial release.
+* 20210222 - Cleaned up interrupt code.
+*
+* This code is given with no guarantees and is intended to be used as an 
+* example of how to use the VersaAPI software package and to check the 
+* operation post install. This code will work with various VersaLogic 
+* single board computers.
+*
+* Default Program Description: 
+* This application will report the VersaAPI library version number, and
+* then run a 8254 Timer example that will count down from a specifed count.
+* When 0 is reached an interrupt (56) will be generated and the counter
+* will be reinitialized and started again.  This will continue until a 
+* specifed number of interrupts are generated.
+* 
+* Command Line Options: 
+* Run timer8254_LoopExample -h for a list of command line options.
+*
+* This code has been compiled and run using gcc on Ubuntu 20.04.1 LTS, 18.04.03 LTS, 
+* kernel 4.15.0-88-generic, 2.6.28-11-generic, with VersaAPI version 1.7.b.  A Linux
+* compatible Makefile has been provided with this .c file for an example
+* of how to compile this code.
+*
+* Usage: 	make clean	=> Removes executable application and all 
+*				   dependant .o files.
+*		make 		=> Builds 'versaAPI_sample' application.
+*
+* Build fruit is an example application 'timer8254_LoopExample' in the current directory.
+*
+* Example output:
+root@user-desktop:/home/user/versaAPI/timer8254_LoopExample# ./timer8254_LoopExample -t -i 3
+VersaAPI library version: 1.7.b;
+Board Info:
+  Name:EBX-37 (Mamba)
+  Number of DIO/GPIOs:32
+  Number of Analog Inputs:8
+  Number of Analog Outputs:4
+  Number of Serial ports:4
+  Number of 8254 Timers:3
+  Watchdog Timer Support:Yes
+  Onboard Fan Command Support:No
+  Board Attributes:0x4
+        Production, Standard board, Extended Temperature, Board Revision Level: 0x0
+***** Start VersaLogic 8254 Timer Loop Example. *****
+
+----- Using timer VL_TIMER0 -----
+
+Run until this number of interrupts are received: 3
+Current number of VersaLogic Timer Interrupts pre-example:
+  5:        720        483   IO-APIC-edge      vldrive
+
+Registering timer callback.
+Stopping VL_TIMER0
+Starting timer VL_TIMER0 in Mode 0, value of 400 with type of internal.
+Timer Count 1(30): Timer Value=381
+Timer Count 2(30): Timer Value=314
+Timer Count 3(30): Timer Value=271
+Timer Count 4(30): Timer Value=221
+Timer Count 5(30): Timer Value=180
+Timer Count 6(30): Timer Value=138
+Timer Count 7(30): Timer Value=96
+Timer Count 8(30): Timer Value=55
+Timer Count 9(30): Timer Value=13
+*** Recieved Signal 56 from Timer number:0 ***
+**********************************************
+********* Control Processing Here ************
+Number of VersaLogic Timer Interrupts post-test (should be one more than when the example startetd):
+  5:        720        484   IO-APIC-edge      vldrive
+**********************************************
+Timer Count 10(30): Timer Value=65484
+Stopping VL_TIMER0
+Starting timer VL_TIMER0 in Mode 0, value of 400 with type of internal.
+Timer Count 1(30): Timer Value=382
+Timer Count 2(30): Timer Value=328
+Timer Count 3(30): Timer Value=278
+Timer Count 4(30): Timer Value=236
+Timer Count 5(30): Timer Value=195
+Timer Count 6(30): Timer Value=153
+Timer Count 7(30): Timer Value=112
+Timer Count 8(30): Timer Value=71
+Timer Count 9(30): Timer Value=29
+*** Recieved Signal 56 from Timer number:0 ***
+**********************************************
+********* Control Processing Here ************
+Number of VersaLogic Timer Interrupts post-test (should be one more than when the example startetd):
+  5:        721        484   IO-APIC-edge      vldrive
+**********************************************
+Timer Count 10(30): Timer Value=48628
+Stopping VL_TIMER0
+Starting timer VL_TIMER0 in Mode 0, value of 400 with type of internal.
+Timer Count 1(30): Timer Value=382
+Timer Count 2(30): Timer Value=329
+Timer Count 3(30): Timer Value=286
+Timer Count 4(30): Timer Value=245
+Timer Count 5(30): Timer Value=203
+Timer Count 6(30): Timer Value=163
+Timer Count 7(30): Timer Value=103
+Timer Count 8(30): Timer Value=62
+Timer Count 9(30): Timer Value=19
+Timer Count 10(30): Timer Value=65515
+Timer Count 10(30): Timer Value=65515
+*** Recieved Signal 56 from Timer number:0 ***
+**********************************************
+********* Control Processing Here ************
+Number of VersaLogic Timer Interrupts post-test (should be one more than when the example startetd):
+  5:        721        485   IO-APIC-edge      vldrive
+**********************************************
+
+***** End VersaLogic 8254 Timer Loop Example. *****
+
+End of VersaLogic Example Application execution.
+

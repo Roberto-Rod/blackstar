@@ -1,0 +1,13 @@
+[Unit]
+Description=BlackStar Service
+After=network.target
+
+[Service]
+ExecStart=/home/blackstar/watch_active_file.sh
+Restart=always
+User=blackstar
+Group=blackstar
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

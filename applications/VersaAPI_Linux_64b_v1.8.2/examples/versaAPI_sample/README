@@ -1,0 +1,27 @@
+* VersaLogic VersaAPI Sample Code - 20200725
+*
+* This code is given with no guarantees and is intended to be used as an 
+* example of how to use the VersaAPI software package and to check the 
+* operation post install. This code will work with various VersaLogic 
+* single board computers and the VersaLogic VL-MPEe-A1/A2 miniPCIe board.
+*
+* Default Program Description: 
+* versaAPI_sample
+*      - Example of using the VersaAPI Administration, Digital I/O, 8254 Counter/Timer
+*        and BIOS bank calls.
+* 
+* Note: By default, the VersaLogic API header file VL_OSALib.h will need to
+* be copied into the local directory. 
+*
+* This code has been compiled and run using gcc on Ubuntu 18.04.03 LTS, 
+* kernel 4.15.0-88-generic, with VersaAPI version 1.6.1.  A Linux
+* compatible Makefile has been provided with this .c file for an example
+* of how to compile this code.
+*
+* Usage: 	make clean	=> Removes executable application and all 
+*				   dependant .o files.
+*		make 		=> Builds 'versaAPI_sample' application.
+*
+* Build fruit is an example application 'versaAPI_sample' in the current directory.
+*
+

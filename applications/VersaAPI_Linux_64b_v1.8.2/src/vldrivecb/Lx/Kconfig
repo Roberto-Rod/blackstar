@@ -1,0 +1,18 @@
+#
+# For a description of the syntax of this configuration file,
+# see Documentation/kbuild/kconfig-language.txt.
+#
+# CGOS configuration.
+#
+
+menu "VersaLogic CGOS API driver"
+
+config CGOS
+	tristate "VersaLogic CGOS API driver"
+	---help---
+	  If you want to use the VersaLogic board features you should include
+
+	  If unsure, say Y.
+
+endmenu
+

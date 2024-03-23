@@ -1,0 +1,75 @@
+/* VersaLogic VersaAPI Sample Code - 20220126
+*
+* This code is given with no guarantees and is intended to be used as an 
+* example of how to use the VersaAPI software package and to check the 
+* operation post install. This code will work with various VersaLogic 
+* single board computers.
+*
+* Default Program Description: 
+* This application will report the VersaAPI library version number, and
+* then run a 8254 Timer example that will count down from a specifed count.
+* When 0 is reached an interrupt (56) will be generated and the counter
+* will be reinitialized and started again.  This will continue until the 
+* specifed number of interrupts are generated. Timing information is
+* printed to the screen: time captured immedidiately before the timer
+* is started, and immediately when the timer interrupt service routine
+* is called. This allows for capturing real-time timing information for
+* the timer count-down.
+* 
+* Command Line Options: 
+* Run timer8254_InterruptExample -h for a list of command line options.
+* 
+* This code has been compiled and run using gcc on Ubuntu 18.04.03 LTS, 
+* kernel 4.15.0-88-generic, with VersaAPI version 1.8.b.  A Linux
+* compatible Makefile has been provided with this .c file for an example
+* of how to compile this code. */
+*
+*
+* Usage: 	make clean	=> Removes executable application and all 
+*				   dependant .o files.
+*		make 		=> Builds 'versaAPI_sample' application.
+*
+* Build fruit is an example application 'timer8254_InterruptExample' in the current directory.
+*
+* Example output:
+
+user@EPU-3311:~/versaAPI_18a/examples/timer8254_single$ ./timer8254_Single -t 0 -m 4 -i 3
+VersaAPI library version: 1.8.b;
+Board Info:
+  Name:EPU-4012 (Owl)
+  Number of DIO/GPIOs:8
+  Number of Analog Inputs:8
+  Number of Analog Outputs:0
+  Number of Serial ports:4
+  Number of 8254 Timers:3
+  Watchdog Timer Support:Yes
+  Onboard Fan Command Support:Yes
+  Board Attributes:0x24
+        Production, Standard board, Extended Temperature, Board Revision Level: 0x4
+Separating timers 1 and 2 into two 16 bit timers.
+Leaving timers in current state.
+***** Start VersaLogic 8254 Timer Loop Example. *****
+
+----- Using timer VL_TIMER0 in mode VL_TIMER_MODE4 (4) -----
+
+Run until this number of interrupts are received: 3
+Current number of VersaLogic Timer Interrupts pre-example:
+   5:          0       1783   IO-APIC    5-edge      vldrive
+
+Registering timer callback.
+Stopping 8254 Timer VL_TIMER0 ...... Done
+
+Starting timer VL_TIMER0 in Mode 4, value of 600 with type of internal.
+    Loop 0,1643220857.170823302,1643220857.171098092,
+Starting timer VL_TIMER0 in Mode 4, value of 600 with type of internal.
+    Loop 1,1643220858.171394892,1643220858.171719047,
+Starting timer VL_TIMER0 in Mode 4, value of 600 with type of internal.
+    Loop 2,1643220859.172025830,1643220859.172351883,
+Stopping VL_TIMER0
+Number of 8254 Timer Interrupts post-test, should be 3 more than when example started:
+   5:          0       1786   IO-APIC    5-edge      vldrive
+
+
+***** End VersaLogic 8254 Timer Loop Example. *****
+
+End of VersaLogic Example Application execution.

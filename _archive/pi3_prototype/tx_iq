@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+from gpiozero import LED
+import subprocess
+import sys
+
+jam_led = LED(27)
+mute_n = LED(5)
+
+if (len(sys.argv) > 1):
+    jam_led.on()
+    mute_n.on()
+    command = "/usr/local/lib/uhd/examples/tx_samples_from_file --file={} --rate=2.5e6 --freq=1575.42e6 --gain=87 --ref=external --repeat".format(sys.argv[1])
+    process = subprocess.Popen(command, shell=True)
+    process.wait()
+    mute_n.off()
+    jam_led.off()

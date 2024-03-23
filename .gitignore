@@ -1,0 +1,9 @@
+# Ignore archives
+*.zip
+*.tgz
+*.tar
+/hw_tests/blk_pc_tests/build/
+/hw_tests/blk_pc_tests/dist_prod_test_gui/
+/hw_tests/blk_pc_tests/innosetup/
+/hw_tests/blk_pc_tests/test_results/
+/hw_tests/test_results/
